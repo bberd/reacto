@@ -93,7 +93,6 @@ function zeroMatrix(arr) {
   }
 
   return arr;
-
 }
 
 // 8.5
