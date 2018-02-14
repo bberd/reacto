@@ -103,7 +103,6 @@ function compress(str) {
   let letterCount = 0;
 
   for (let i = 0; i < str.length; i++) {
-    console.log(str[i]);
     if (currLetter === str[i]) {
       letterCount++;
       if (i === str.length - 1) {
