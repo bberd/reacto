@@ -67,3 +67,39 @@ function oneAway(str1, str2) {
   }
   return true;
 }
+
+
+// 1.8
+function zeroMatrix(arr) {
+  const rows = arr.length;
+  const cols = arr[0].length;
+  let rowIs = [];
+  let colIs = [];
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (arr[r][c] === 0) {
+        rowIs.push(r);
+        colIs.push(c);
+      }
+    }
+  }
+
+  for (let i = 0; i < rowIs.length; i++) {
+    arr[rowIs[i]].fill(0);
+    for (let j = 0; j < cols; j++) {
+      arr[j][colIs[i]] = 0;
+    }
+  }
+
+  return arr;
+
+}
+
+// 8.5
+// Write a recursive function to multiply two positive integers without using the operator.You can use addition, subtraction and bit shifting but you hsould minimize the number of these operations.
+
+function fakeMultiply(n, m) { }
+
+
+
