@@ -95,10 +95,33 @@ function zeroMatrix(arr) {
   return arr;
 }
 
-// 8.5
-// Write a recursive function to multiply two positive integers without using the operator.You can use addition, subtraction and bit shifting but you hsould minimize the number of these operations.
+// 1.6
+function compress(str) {
+  str = str.split('');
+  let currLetter = str[0];
+  let result = '';
+  let letterCount = 0;
 
-function fakeMultiply(n, m) { }
+  for (let i = 0; i < str.length; i++) {
+    console.log(str[i]);
+    if (currLetter === str[i]) {
+      letterCount++;
+      if (i === str.length - 1) {
+        result += currLetter + letterCount;
+      }
+    } else {
+        result += currLetter + letterCount;
+        currLetter = str[i];
+        letterCount = 1;
+        if (i === str.length - 1) {
+          result += currLetter + letterCount;
+        }
+    }
+  }
 
-
+  for (let i = 1; i < result.length; i += 2) {
+    if (result[i] > 1) return result;
+  }
+  return str.join('');
+}
 
