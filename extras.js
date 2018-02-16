@@ -41,14 +41,14 @@ function numberOfPairs(a, k) {
   let endI = arr.length - 1;
 
   while (startI !== endI) {
-      if (arr[startI] === arr[startI + 1] && arr[startI] + arr[startI + 1] !== k) { //only skip doubles if they don't add up to k
-        startI++;
-        continue;
-      }
+    if (arr[startI] === arr[startI + 1] && arr[startI] + arr[startI + 1] !== k) { //only skip doubles if they don't add up to k
+      startI++;
+      continue;
+    }
     if (arr[endI - 1] === arr[endI] && arr[endI] + arr[endI - 1] !== k) {  //only skip doubles if they don't add up to k
-        endI--;
-        continue;
-      }
+      endI--;
+      continue;
+    }
 
     const currSum = arr[startI] + arr[endI];
     if (currSum === k) {
