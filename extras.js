@@ -88,3 +88,18 @@ function numberOfPairs(a, k) {
 // }
 
 // console.log(zombieCluster(['1100', '1110', '0110', '0001']));
+
+
+//Watson gives Sherlock an array of integers. His challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right.
+function leftRightSums(a) {
+  if (a.length < 3) return 'NO';
+  let leftSum = a[0];
+  let rightSum = a.reduce((sum, i) => sum + i, 0) - a[0] - a[1];
+
+  for (let i = 1; i < a.length - 1; i++) {
+    if (leftSum === rightSum) return 'YES';
+    leftSum += a[i];
+    rightSum -= a[i + 1];
+  }
+  return 'NO';
+}
